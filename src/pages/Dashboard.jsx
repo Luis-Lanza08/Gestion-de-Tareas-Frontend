@@ -208,11 +208,12 @@ export default function Dashboard() {
                 </p>
                 {task.dueDate && (
                   <p style={{ margin: '0.2rem 0', fontSize: '0.85rem', color: '#555' }}>
-                    ⏳ Vence: {new Date(task.dueDate).toLocaleDateString('es-BO', {
+                    ⏳ Vence: {new Intl.DateTimeFormat('es-BO', {
                       year: 'numeric',
                       month: 'long',
                       day: 'numeric',
-                    })}
+                      timeZone: 'UTC' // 🔑 clave para evitar desfase
+                    }).format(new Date(task.dueDate))}
                   </p>
                 )}
               </div>
