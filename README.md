@@ -1,12 +1,72 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Frontend - Gestor de Tareas
 
-Currently, two official plugins are available:
+Este es el frontend del proyecto **Gestor de Tareas**, desarrollado con React + Vite. Consume una API REST para gestionar autenticación y tareas (crear, editar, eliminar, filtrar).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tecnologías
 
-## Expanding the ESLint configuration
+- React
+- Vite
+- Axios
+- React Router DOM
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Instalación
+
+### 1. Clonar el repositorio
+
+```bash
+git clone https://github.com/tu_usuario/tu_repo_frontend.git
+cd frontend
+```
+
+### 2. Instalar dependencias
+
+```bash
+npm install
+```
+
+### 3. Variables de entorno
+
+Crea un archivo `.env` en la raíz del proyecto:
+
+```env
+VITE_API_URL=https://gestion-de-tareas-backend-xxxxx.onrender.com/api
+```
+
+---
+
+## ▶Ejecutar localmente
+
+```bash
+npm run dev
+```
+
+La aplicación estará disponible en `http://localhost:5173`
+
+---
+
+## Funcionalidades
+
+- Registro e inicio de sesión con JWT
+- Gestión de tareas (crear, editar, eliminar)
+- Filtros:
+  - Por estado: pendiente, en progreso, completada
+  - Por texto: título o descripción
+  - Por fecha de creación
+  - Por fecha de vencimiento
+- Validaciones:
+  - No se puede eliminar si la tarea no está completada
+  - No se puede completar directamente desde pendiente
+- Alertas visuales de éxito o error
+- Estilo responsivo y centrado
+
+---
+
+## Despliegue
+
+Este frontend fue desplegado en [Vercel](https://vercel.com/).  
+Solo debes enlazar tu repositorio y configurar la variable `VITE_API_URL` correspondiente.
+
+---
